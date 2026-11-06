@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Echo Vault – Sonar Stealth Maze Game (Free, Play in Browser)</title>
+<meta name="description" content="Echo Vault is a free browser stealth puzzle game. The maze is invisible – ping with sonar to reveal walls, but every ping alerts the guards. Endless procedurally generated levels.">
+<link rel="stylesheet" href="style.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6319811906363452" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="index.html">ECHO<span>VAULT</span></a>
+  <nav>
+    <a href="index.html">Play</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="stage">
+    <div class="hud">
+      <div>LEVEL <b id="hLevel">1</b></div>
+      <div>SHARDS <b id="hShards">0/0</b></div>
+      <div>LIVES <b id="hLives">3</b></div>
+      <div>SCORE <b id="hScore">0</b></div>
+      <div>BEST <b id="hBest">0</b></div>
+    </div>
+    <div class="canvas-wrap">
+      <canvas id="game"></canvas>
+      <div id="overlay" class="overlay">
+        <h1>ECHO VAULT</h1>
+        <p>The vault is pitch black. Send a sonar <b>PING</b> to see the walls.<br>
+        But guards hear every ping. Collect all shards, then reach the exit.</p>
+        <button id="startBtn" class="big">▶ START</button>
+        <small>Move: Arrow keys / WASD &nbsp;•&nbsp; Ping: Space &nbsp;•&nbsp; Mobile: on-screen buttons</small>
+      </div>
+    </div>
+    <div class="pad" id="pad">
+      <button data-d="up" aria-label="Up">▲</button>
+      <button data-d="left" aria-label="Left">◀</button>
+      <button id="pingBtn" class="ping" aria-label="Ping">PING</button>
+      <button data-d="right" aria-label="Right">▶</button>
+      <button data-d="down" aria-label="Down">▼</button>
+    </div>
+  </section>
+
+  <!-- Optional: after AdSense approval you can paste a manual ad unit here -->
+  <div class="adslot" id="adslot1"></div>
+
+  <section class="content">
+    <h2>How to play Echo Vault</h2>
+    <p>Echo Vault is a free stealth puzzle game that runs right in your browser – no download, no sign-up. You are a thief inside a vault with the lights off. The walls are invisible until you send out a sonar ping. The ring of sound expands outward and briefly lights up the maze around you.</p>
+    <p>The catch: <b>guards can hear your pings</b>. Any guard within range will rush to the spot where you pinged. Ping too often and you will be hunted; ping too rarely and you will wander into dead ends. Every level asks you to balance information against noise.</p>
+
+    <h3>Goal of each level</h3>
+    <ul>
+      <li>Collect every golden shard hidden in the vault.</li>
+      <li>Once all shards are collected the exit door unlocks (it turns green).</li>
+      <li>Reach the exit without getting caught. You have 3 lives in total.</li>
+    </ul>
+
+    <h3>Controls</h3>
+    <ul>
+      <li><b>Move:</b> Arrow keys or W A S D.</li>
+      <li><b>Ping:</b> Space bar (1.1 second cooldown).</li>
+      <li><b>Mobile:</b> use the on-screen D-pad and PING button below the game.</li>
+    </ul>
+
+    <h3>Scoring</h3>
+    <p>Each level gives 100 × level points, 50 per shard, a speed bonus for finishing quickly, and a small penalty for every ping you use. Your best score is stored locally in your browser.</p>
+
+    <h3>Tips and strategy</h3>
+    <ul>
+      <li>Ping once at the start of each level to get a feel for the layout, then move in short bursts.</li>
+      <li>After you ping, <b>move away from the ping spot</b> – guards walk to where the sound came from.</li>
+      <li>You can always faintly see the tiles right next to you, so use corridors' edges to navigate silently.</li>
+      <li>Guards appear as red glows only when revealed by a ping or when they are very close. Listen for danger by watching the map.</li>
+      <li>Deeper levels have bigger mazes, more guards and faster patrols, so plan your pings carefully.</li>
+    </ul>
+
+    <h2>About the game</h2>
+    <p>Echo Vault is an independent browser game built with plain HTML, CSS and JavaScript. Every level is generated procedurally with a randomized depth-first maze algorithm plus extra loops, so no two runs are identical. New features and levels are added over time. Read more on the <a href="about.html">About page</a>.</p>
+  </section>
+</main>
+
+<footer>
+  <p>© <span id="yr"></span> Echo Vault • <a href="about.html">About</a> • <a href="privacy.html">Privacy Policy</a> • <a href="contact.html">Contact</a></p>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<script src="game.js"></script>
+</body>
+</html>
